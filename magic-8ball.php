@@ -22,13 +22,14 @@ $answers = [
     'Very doubtful.'];
 
 
-function magic8Ball($answers){
-  echo "I can answer any yes or no question. \n";
-  $question = readline("What would you like to know? \n");
-  echo "So you want to know, '${question}?'... \n";
+function magic8Ball(){
+    global $answers;
+    echo "I can answer any yes or no question. \n";
+    $question = readline("What would you like to know? \n");
+    echo "So you want to know, '${question}?'... \n";
 
-  $rand_int = rand(0,19);
-  echo $answers[$rand_int] . "\n";
+    $rand_int = rand(0,19);
+    echo $answers[$rand_int] . "\n";
 }
 
-magic8Ball($answers); 
+magic8Ball(); 
