@@ -1,3 +1,5 @@
+<!-- Currently this is terminal only, needs converting to output to browser -->
+
 <?php
 $answers = [
     'It is certain.',
