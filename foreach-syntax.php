@@ -36,10 +36,35 @@ $footwear = [
 
 <p>Our footwear:</p>
 <?php
-foreach ($footwear as $type => $brands): // : replaces {
+foreach ($footwear as $type => $brands): // ':' replaces '{'
 ?>
 <p>We sell <?=$brands?> brands of <?=$type?></p> // <?=$foo?> // allows php to be accessed within html 
 <?php
-endforeach; // endforeach replaces }
+endforeach; // 'endforeach' replaces '}'
 ?>
 </html>
+
+<!-- Menu example -->
+
+<?php
+$drinks = ["latte" => 3, "flat white" => 3.5, "tea" => 1.5];
+$pastries = ["sausage roll", "tea cake", "sandwich", "just a cake"];
+?>
+
+<h1>Welcome to the Repetitive Cafe</h1>
+
+<h3>Drinks!</h3>
+<ul>
+  <?php
+    foreach ($drinks as $drink => $price) : ?>
+      <li><?="$drink: £$price"?></li>
+    <?php endforeach;
+  ?>
+</ul>
+<h3>Pastries! ($2 each)</h3>
+<ul>
+  <?php for ($i = 0; $i < count($pastries); $i++) : ?>
+    <li><?=$pastries[$i]?></li>
+  <?php endfor; 
+  ?>
+</ul>
