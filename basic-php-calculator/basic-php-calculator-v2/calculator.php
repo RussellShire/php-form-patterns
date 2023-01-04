@@ -1,14 +1,22 @@
 <html>
 <body>
-<!--Your code goes here-->
-<form method="get">
+<?php 
+  $add_answer = '';
+
+  if($_SERVER["REQUEST_METHOD"] === "POST") {
+    $add_answer = $_POST["num1add"]+$_POST["num2add"];
+  }
+?>
+
+<form method="post">
   <h3>Addition:</h3>
   <input name="num1add" type="number" />
   <p style='display:inline'>+</>
   <input name="num2add" type="number" />
   <button type="submit">=</button>
   <p style='display:inline'>
-    <?= $_GET["num1add"]+$_GET["num2add"]?>
+    <!-- <?= $_GET["num1add"]+$_GET["num2add"]?> -->
+    <?= $add_answer ?>
   </p>
 </form>
 
@@ -20,10 +28,10 @@
   
   <button type="submit">=</button>
   <p style='display:inline'>
-    <?= $_GET["num1div"]/$_GET["num2div"]?>
+    <!-- <?= $_GET["num1div"]/$_GET["num2div"]?> -->
   </p>
 </form>
 
-<a href="index.php">Reset</a>
+<a href="calculator.php">Reset</a>
 </body>
 </html>
