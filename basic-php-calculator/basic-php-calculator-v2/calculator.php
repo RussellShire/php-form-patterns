@@ -2,9 +2,13 @@
 <body>
 <?php 
   $add_answer = '';
+  $div_answer = '';
 
-  if($_SERVER["REQUEST_METHOD"] === "POST") {
+  if($_SERVER["REQUEST_METHOD"] === "POST" && !empty($_POST["num1add"])) {
     $add_answer = $_POST["num1add"]+$_POST["num2add"];
+  }
+  if($_SERVER["REQUEST_METHOD"] === "POST" && !empty($_POST["num1div"])) {
+    $div_answer = $_POST["num1div"]/$_POST["num2div"];
   }
 ?>
 
@@ -15,12 +19,11 @@
   <input name="num2add" type="number" />
   <button type="submit">=</button>
   <p style='display:inline'>
-    <!-- <?= $_GET["num1add"]+$_GET["num2add"]?> -->
     <?= $add_answer ?>
   </p>
 </form>
 
-<form method="get">
+<form method="post">
   <h3>Division:</h3>
   <input name="num1div" type="number" />
   <p style='display:inline'>÷</>
@@ -28,7 +31,7 @@
   
   <button type="submit">=</button>
   <p style='display:inline'>
-    <!-- <?= $_GET["num1div"]/$_GET["num2div"]?> -->
+    <?= $div_answer ?>
   </p>
 </form>
 
